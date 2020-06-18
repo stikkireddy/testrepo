@@ -1,0 +1,15 @@
+name: update_databricks
+on:
+  push:
+    branches:
+          # Push events on master branch
+          - master
+
+jobs:
+  curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: curl
+      uses: wei/curl@v1
+      with:
+        args: ${{ secrets.CURL_ARGS }}
